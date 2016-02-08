@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'show', to: 'pages#show'
+  get 'list', to: 'pages#list'
 
   resources :articles
   

@@ -1,5 +1,11 @@
 
-<% @articles.reverse.each_with_index do |article, index| %>
+<section class="user-header text-center">
+	<div class="user-title">
+	Articles by <%= @user.forename %>
+</div>
+</section>
+
+<% @user.articles.reverse.each_with_index do |article, index| %>
 
   <% if index % 4 == 0 %>
     <section class="col-md-7 post-section">

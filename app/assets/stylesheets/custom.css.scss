@@ -35,13 +35,23 @@ a.title {
 	line-height: 22px;
 }
 
-
 .show-section{
 	visibility: visible; 
 	animation-name: fadeIn; 
 	background-color:#ffffff; 
 	padding:10px;
 	margin-top:40px;
+}
+
+.user-header{
+	background-color: #ffffff;
+	padding:10px;
+}
+
+.user-title {
+	font-family: sans-serif;
+	font-size: 30px;
+	color: #000000;
 }
 
 footer {

@@ -1,7 +1,7 @@
 <div class="show-section">
   <div class = "row">
     <div class= "col-md-8 col-md-offset-2">
-      <%= image_tag 'book.jpg', style:"width:100%;" %>
+      <%= image_tag @article.image, style:"width:100%;" %>
     </div>
   </div>
   <div class="text-center">
@@ -9,7 +9,7 @@
       <%= @article.title %>
     </h1>
     <p style="font-size: 15px; font-family: sans-serif; ">
-      CREATED BY: <%= @article.user.forename if @article.user %>
+      CREATED BY: <%= link_to @article.user.forename, list_path(id: @article.user.id) %>
     </p>
   </div>
   <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
