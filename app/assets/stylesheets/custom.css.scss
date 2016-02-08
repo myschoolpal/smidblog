@@ -34,3 +34,34 @@ a.title {
 	color: #333333;
 	line-height: 22px;
 }
+
+
+.show-section{
+	visibility: visible; 
+	animation-name: fadeIn; 
+	background-color:#ffffff; 
+	padding:10px;
+	margin-top:40px;
+}
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #727272;
+	color: #727272;
+}
+
+footer a {
+	color: #727272;
+	text-decoration: none;
+}
+
+footer ul {
+	float: right;
+	list-style: none;
+}
+
+footer ul li {
+	float:left;
+	margin-left: 15px;
+}

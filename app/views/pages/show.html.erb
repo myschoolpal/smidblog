@@ -1,18 +1,23 @@
-<h1>Show</h1>
-<p>
-	Title: <%= @article.title %>
-</p>
-<p>
-	Created by: <%= @article.user.forename if @article.user %>
-</p>
-<p>
-	Content: <%= @article.content %>
-</p>
-<p>
-	<small>
-	Created: <%= time_ago_in_words(@article.created_at) %> ago, 
-	Last updated: <%=  time_ago_in_words(@article.updated_at) %> ago
-	</small>
-</p>
-<%= link_to 'Back to articles listing', root_path %>
-
+<div class="show-section">
+  <div class = "row">
+    <div class= "col-md-8 col-md-offset-2">
+      <%= image_tag 'book.jpg', style:"width:100%;" %>
+    </div>
+  </div>
+  <div class="text-center">
+    <h1 style="font-family: sans-serif; font-size:36px; margin:20px; margin-bottom:10px;">
+      <%= @article.title %>
+    </h1>
+    <p style="font-size: 15px; font-family: sans-serif; ">
+      CREATED BY: <%= @article.user.forename if @article.user %>
+    </p>
+  </div>
+  <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
+    <%= @article.content %>
+  </p>
+  <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
+    <small>
+			Created: <%= @article.created_at.strftime("%-d %b %Y, %H:%M") %> | Last updated: <%= @article.updated_at.strftime("%-d %b %Y, %H:%M") %>
+		</small>
+  </p>         
+</div>
