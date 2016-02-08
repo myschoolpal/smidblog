@@ -1,0 +1,82 @@
+
+<% i=0 %>
+<% @articles.each do |article| %>
+
+<section class="col-md-7 post-section">
+  <div class="row">
+    <div class="col-md-12" style="margin-bottom:10px;">
+      <%= link_to article.title, show_path(id: article.id), class: "title" %>  
+      <p>
+        <span class="date">
+          <%= article.created_at.strftime("%-d %^B %Y")%>
+        </span>
+      </p>
+    </div>
+    <div class="col-md-7">
+      <%= image_tag 'book.jpg', style:"width:100%;" %>
+    </div>
+    <div class="col-md-5">             
+      <p class="description">
+        <%= truncate(article.content, length:350) %>   
+      </p>
+      <p class="text-center"> 
+        <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="col-md-4 col-md-offset-1 post-section">
+  <%= image_tag 'earth.jpg', style:"width:100%;" %>
+  <div class="text-center">
+    <%= link_to article.title, show_path(id: article.id), class: "title" %>              
+    <p>
+      <span class="date">
+        <%= article.created_at.strftime("%-d %^B %Y")%>
+      </span>
+    </p>
+    <p>
+      <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+    </p>
+  </div>
+</section>
+
+<section class="col-md-4 post-section">
+  <%= image_tag 'earth.jpg', style:"width:100%;" %>
+  <div class="text-center">
+    <%= link_to article.title, show_path(id: article.id), class: "title" %>             
+    <p>
+      <span class="ate">
+        <%= article.created_at.strftime("%-d %^B %Y")%>
+      </span>
+    </p>
+    <p>
+      <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+    </p>
+  </div>
+</section>
+
+<section class="col-md-7 col-md-offset-1 post-section">
+  <div class="row">
+    <div class="col-md-12" style="margin-bottom:10px;">
+      <%= link_to article.title, show_path(id: article.id), class: "title" %>  
+      <p>
+        <span class="date">
+          <%= article.created_at.strftime("%-d %^B %Y")%>
+        </span>
+      </p>
+    </div>
+    <div class="col-md-7">
+      <%= image_tag 'book.jpg', style:"width:100%;" %>
+    </div>
+    <div class="col-md-5">             
+      <p class="description">
+        <%= truncate(article.content, length:350) %>   
+      </p>
+      <p class="text-center"> <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+      </p>
+    </div>
+  </div>
+</section>
+
+<% end %>

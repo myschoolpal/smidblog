@@ -1,0 +1,18 @@
+<h1>Show</h1>
+<p>
+	Title: <%= @article.title %>
+</p>
+<p>
+	Created by: <%= @article.user.forename if @article.user %>
+</p>
+<p>
+	Content: <%= @article.content %>
+</p>
+<p>
+	<small>
+	Created: <%= time_ago_in_words(@article.created_at) %> ago, 
+	Last updated: <%=  time_ago_in_words(@article.updated_at) %> ago
+	</small>
+</p>
+<%= link_to 'Back to articles listing', root_path %>
+
