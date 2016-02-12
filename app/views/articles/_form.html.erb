@@ -1,23 +1,45 @@
+
 <% if @article.errors.any? %>
-<h2> The following errors prevented the article from getting created:</h2>
-<ul>
-	<% @article.errors.full_messages.each do |msg| %>
-	<li><%= msg %></li>
-	<% end %>
-</ul>
+	<section class="show-section">
+		<h2> The following errors prevented the article from getting created:</h2>
+		<ul>
+			<% @article.errors.full_messages.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li>
+			<% end %>
+		</ul>
+	</section>
 <% end %>
 
-<%= form_for @article do |f| %>
-	<p>
-		<%= f.label :title %><br />
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :content %><br />
-		<%= f.text_area :content %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-<% end %>
-<%= link_to 'Back to articles listing', articles_path %>
+<section class="show-section">
+	<div class = "row">
+		<div class = "col-md-offset-1 col-md-10">
+			<div class = "col-sm-12">
+				<%= form_for @article do |f| %>
+					<div class = "col-sm-offset-2 col-sm-2">
+						<%= f.label :title %>
+					</div>
+					<div class = "col-sm-8">
+						<%= f.text_field :title %>
+					</div>
+					<div class = "col-sm-offset-2 col-sm-2">
+						<%= f.label :content %>
+					</div>
+					<div class = "col-sm-8">
+						<%= f.text_field :content %>
+					</div>
+					<div class = "col-sm-offset-2 col-sm-2">
+						<%= f.label :image %>
+					</div>
+					<div class = "col-sm-8">
+						<%= f.text_field :image %>
+					</div>
+					<div class = "col-sm-offset-5 col-sm-7">
+						<%= f.submit "Create Article", class: "btn btn-xs btn-primary" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>
