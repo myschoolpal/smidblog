@@ -10,8 +10,10 @@
         </li>
       </ul>
     </div>
-      <%= link_to 'Home LGDIN', articles_path, style: "margin-top:20px", class: "collapsed btn btn-small btn-success pull-right" %>
+    <% if current_user.present? %>
+      <%= link_to 'Home', articles_path, style: "margin-top:20px", class: "collapsed btn btn-small btn-primary pull-right" %>
+    <% else %>
       <%= link_to 'Home', root_path, style: "margin-top:20px; margin-right:10px;", class: "collapsed btn btn-small btn-primary pull-right" %>
-
+    <% end %>
   </div>
 </nav>

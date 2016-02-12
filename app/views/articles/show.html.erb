@@ -14,8 +14,8 @@
     <h1 style="font-family: sans-serif; font-size:36px; margin:20px; margin-bottom:10px;">
       <%= @article.title %>
     </h1>
-    <p style="font-size: 15px; font-family: sans-serif; ">
-      CREATED BY: <%= link_to @article.user.forename, list_path(id: @article.user.id) %>
+    <p>
+      CREATED BY <%= link_to @article.user.forename, list_path(id: @article.user.id), class: "name-user" %>
     </p>
   </div>
   <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
