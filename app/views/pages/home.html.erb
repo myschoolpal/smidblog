@@ -3,83 +3,83 @@
 
   <% if index % 4 == 0 %>
     <section class="col-md-7 post-section">
-  <div class="row">
-    <div class="col-md-12" style="margin-bottom:10px;">
-      <%= link_to article.title, show_path(id: article.id), class: "title" %>  
-      <p>
-        <span class="date">
-          <%= article.created_at.strftime("%-d %^B %Y")%>
-        </span>
-      </p>
-    </div>
-    <div class="col-md-7">
-      <%= image_tag article.image, style:"width:100%;" %>
-    </div>
-    <div class="col-md-5">             
-      <p class="description">
-        <%= truncate(article.content, length:350) %>   
-      </p>
-      <p class="text-center"> 
-        <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
-      </p>
-    </div>
-  </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-bottom:10px;">
+          <%= link_to article.title, show_path(id: article.id), class: "title" %>  
+          <p>
+            <span class="date">
+              <%= article.created_at.strftime("%-d %^B %Y")%>
+            </span>
+          </p>
+        </div>
+        <div class="col-md-7">
+          <%= image_tag article.image, style:"width:100%;" %>
+        </div>
+        <div class="col-md-5">             
+          <p class="description">
+            <%= truncate(article.content, length:350) %>   
+          </p>
+          <p class="text-center"> 
+            <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+          </p>
+        </div>
+      </div>
     </section>
 
   <% elsif index % 4 == 1 %>
     <section class="col-md-4 col-md-offset-1 post-section">
-  <%= image_tag article.image, style:"width:100%;" %>
-  <div class="text-center">
-    <%= link_to article.title, show_path(id: article.id), class: "title" %>              
-    <p>
-      <span class="date">
-        <%= article.created_at.strftime("%-d %^B %Y")%>
-      </span>
-    </p>
-    <p>
-      <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
-    </p>
-  </div>
+      <%= image_tag article.image, style:"width:100%;" %>
+      <div class="text-center">
+        <%= link_to article.title, show_path(id: article.id), class: "title" %>              
+        <p>
+          <span class="date">
+            <%= article.created_at.strftime("%-d %^B %Y")%>
+          </span>
+        </p>
+        <p>
+          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+        </p>
+      </div>
     </section>
 
   <% elsif index % 4 == 2 %>
     <section class="col-md-4 post-section">
-  <%= image_tag article.image, style:"width:100%;" %>
-  <div class="text-center">
-    <%= link_to article.title, show_path(id: article.id), class: "title" %>             
-    <p>
-      <span class="ate">
-        <%= article.created_at.strftime("%-d %^B %Y")%>
-      </span>
-    </p>
-    <p>
-      <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
-    </p>
-  </div>
+      <%= image_tag article.image, style:"width:100%;" %>
+      <div class="text-center">
+        <%= link_to article.title, show_path(id: article.id), class: "title" %>             
+        <p>
+          <span class="ate">
+            <%= article.created_at.strftime("%-d %^B %Y")%>
+          </span>
+        </p>
+        <p>
+          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+        </p>
+      </div>
     </section>
 
   <% else %>
     <section class="col-md-7 col-md-offset-1 post-section">
-  <div class="row">
-    <div class="col-md-12" style="margin-bottom:10px;">
-      <%= link_to article.title, show_path(id: article.id), class: "title" %>  
-      <p>
-        <span class="date">
-          <%= article.created_at.strftime("%-d %^B %Y")%>
-        </span>
-      </p>
-    </div>
-    <div class="col-md-7">
-      <%= image_tag article.image, style:"width:100%;" %>
-    </div>
-    <div class="col-md-5">             
-      <p class="description">
-        <%= truncate(article.content, length:350) %>   
-      </p>
-      <p class="text-center"> <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
-      </p>
-    </div>
-  </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-bottom:10px;">
+          <%= link_to article.title, show_path(id: article.id), class: "title" %>  
+          <p>
+            <span class="date">
+              <%= article.created_at.strftime("%-d %^B %Y")%>
+            </span>
+          </p>
+        </div>
+        <div class="col-md-7">
+          <%= image_tag article.image, style:"width:100%;" %>
+        </div>
+        <div class="col-md-5">             
+          <p class="description">
+            <%= truncate(article.content, length:350) %>   
+          </p>
+          <p class="text-center"> <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+          </p>
+        </div>
+      </div>
     </section>
 
   <% end %>

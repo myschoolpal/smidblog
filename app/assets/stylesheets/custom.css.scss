@@ -3,7 +3,7 @@ $navbar-default-bg: white;
 @import "bootstrap";
 
 body{
-	background-color: #f8f8f8;
+	background-color: #f0f0f0;
 }
 
 .post-section{
@@ -54,15 +54,22 @@ a.title {
 	color: #000000;
 }
 
+a.edit-title {
+	color: #888888; 
+	text-decoration: none; 
+	font-size: 22px; 
+	font-family: sans-serif;
+}
+
 footer {
 	margin-top: 45px;
 	padding-top: 5px;
-	border-top: 1px solid #727272;
-	color: #727272;
+	border-top: 1px solid #dddddd;
+	color: #dddddd;
 }
 
 footer a {
-	color: #727272;
+	color: #dddddd;
 	text-decoration: none;
 }
 
