@@ -1,5 +1,5 @@
 <section class="show-section">
-	<div style ="font-family:sans-serif; color:#888888; font-size:15px; text-align:center; text-transform:uppercase;">
+	<div style ="font-family:sans-serif; color:#aaaaaa; font-size:15px; text-align:center; text-transform:uppercase;">
 		Welcome <%= current_user.forename %>
 	</div>
 	<div class="user-title">
@@ -13,7 +13,7 @@
 	<div class = "row">
 		<div class = "col-sm-offset-1 col-sm-10">
 			<% @articles.each do |article| %>
-				<div class = "col-sm-12" style="border-bottom:1px solid #888888; padding-bottom:10px; padding-top:10px;">
+				<div class = "col-sm-12" style="border-bottom:1px solid #aaaaaa; padding-bottom:10px; padding-top:10px;">
 					<div class = "col-sm-2">
 						<% signer = Aws::S3::Presigner.new %>
 						<% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: article.image) %>
@@ -21,7 +21,7 @@
 					</div>
 					<div class="col-sm-10">
 						<%= link_to article.title, article_path(article), class: "title" %>
-						<div style="color:#888888; text-decoration:none; font-size:10px; font-family:sans-serif;">
+						<div style="color:#aaaaaa; text-decoration:none; font-size:10px; font-family:sans-serif;">
 							Created by: <%= article.user.forename %> | 
 							Created: <%= article.created_at.strftime("%-d %b %Y, %H:%M") %> | 
 							Last updated: <%= article.updated_at.strftime("%-d %b %Y, %H:%M") %>
