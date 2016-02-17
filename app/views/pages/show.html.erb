@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-UK">
 <html>
-
 <div class = "row">
   <div class= "col-md-10 col-md-offset-1">
     <div class="col-md-12 show-section">
@@ -10,21 +9,22 @@
         <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: @article.image) %>
         <%= image_tag image_url, style:"width:100%; margin-top:10px;" %>
       </div>
-      <div>
+      <div class = "text-center">
         <h1 class = "article-title" style="margin-top:20px;">
           <%= @article.title %>
         </h1>
         <p class="article-by">
           CREATED BY <%= link_to @article.user.forename, list_path(id: @article.user.id), class: "name-user" %>
         </p>
-        <div class="article-content" style="margin-left:20px; margin-right:20px;">
-          <%= @article.content %>
-        </div>
-        <br />
-        <small>
-          Created: <%= @article.created_at.strftime("%-d %b %Y, %H:%M") %> | Last updated: <%= @article.updated_at.strftime("%-d %b %Y, %H:%M") %>
-        </small>
       </div>
+      <div class="article-content" style="margin-left:20px; margin-right:20px;">
+        <%= @article.content %>
+      </div>
+      <br />
+      <small>
+        Created: <%= @article.created_at.strftime("%-d %b %Y, %H:%M") %> | Last updated: <%= @article.updated_at.strftime("%-d %b %Y, %H:%M") %>
+      </small>
     </div>
   </div>
 </div>
+</html>
