@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'aws-sdk', '~> 2'
+gem 'bootstrap-wysihtml5-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

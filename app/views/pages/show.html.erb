@@ -1,23 +1,30 @@
-<div class="show-section">
-  <div class = "row">
-    <div class= "col-md-8 col-md-offset-2">
-      <%= image_tag @article.image, style:"width:100%;" %>
+<!DOCTYPE html>
+<html lang="en-UK">
+<html>
+
+<div class = "row">
+  <div class= "col-md-10 col-md-offset-1">
+    <div class="col-md-12 show-section">
+      <div class = "col-md-4">
+        <% signer = Aws::S3::Presigner.new %>
+        <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: @article.image) %>
+        <%= image_tag image_url, style:"width:100%; margin-top:10px;" %>
+      </div>
+      <div>
+        <h1 class = "article-title" style="margin-top:20px;">
+          <%= @article.title %>
+        </h1>
+        <p class="article-by">
+          CREATED BY <%= link_to @article.user.forename, list_path(id: @article.user.id), class: "name-user" %>
+        </p>
+        <div class="article-content" style="margin-left:20px; margin-right:20px;">
+          <%= @article.content %>
+        </div>
+        <br />
+        <small>
+          Created: <%= @article.created_at.strftime("%-d %b %Y, %H:%M") %> | Last updated: <%= @article.updated_at.strftime("%-d %b %Y, %H:%M") %>
+        </small>
+      </div>
     </div>
   </div>
-  <div class="text-center">
-    <h1 style="font-family: sans-serif; font-size:36px; margin:20px; margin-bottom:10px;">
-      <%= @article.title %>
-    </h1>
-    <p>
-      CREATED BY <%= link_to @article.user.forename, list_path(id: @article.user.id), class: "name-user" %>
-    </p>
-  </div>
-  <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
-    <%= @article.content %>
-  </p>
-  <p style ="font-family:sans-serif; font-size:14px; color:#333333; ">
-    <small>
-			Created: <%= @article.created_at.strftime("%-d %b %Y, %H:%M") %> | Last updated: <%= @article.updated_at.strftime("%-d %b %Y, %H:%M") %>
-		</small>
-  </p>         
 </div>

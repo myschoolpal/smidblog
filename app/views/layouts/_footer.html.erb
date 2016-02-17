@@ -1,22 +1,25 @@
 <footer class = "footer">
-  <small>
-  </small>
-  <nav>
-    <ul>
-      <small>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to "Sign up", new_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Log in", new_user_session_path %>
-          </li>
-        <% end %>
-      </small>
-    </ul> 
-  </nav>
+  <div class = "container">
+    <small>
+    </small>
+    <nav>
+      <ul>
+        <small>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Log in", new_user_session_path %>
+            </li>
+          <% end %>
+        </small>
+      </ul> 
+    </nav>
+  </div>
 </footer>
+
