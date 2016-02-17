@@ -23,12 +23,17 @@
           <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: article.image) %>
           <%= image_tag image_url, style:"width:100%;" %>
         </div>
-        <div class="col-md-5">             
-          <p class="description">
+        <div class="col-md-5" style="margin-top:5px; margin-bottom:5px;">             
+          <p class="description visible-md">
+            <%= truncate(article.content, length:220) %>   
+          </p>
+          <p class="description hidden-md">
             <%= truncate(article.content, length:350) %>   
           </p>
+        </div>
+        <div class = "col-md-5">
           <p class="text-center"> 
-            <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+            <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-primary" %>
           </p>
         </div>
       </div>
@@ -38,7 +43,8 @@
       <% signer = Aws::S3::Presigner.new %>
       <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: article.image) %>
       <%= image_tag image_url, style:"width:100%;" %>
-      <div class="text-center">
+      <div class = "row">
+      <div class="col-md-12 text-center" style="margin-top:10px;">
         <%= link_to article.title, show_path(id: article.id), class: "title" %>             
         <p>
           <span class="date">
@@ -46,24 +52,26 @@
           </span>
         </p>
         <p>
-          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-primary" %>
         </p>
       </div>
+    </div>
     </section>
   <% elsif index % 4 == 2 %>
     <section class="col-md-4 post-section">
       <% signer = Aws::S3::Presigner.new %>
       <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: article.image) %>
       <%= image_tag image_url, style:"width:100%;" %>
-      <div class="text-center">
+      <div class = "row">
+      <div class="col-md-12 text-center" style="margin-top:10px;">
         <%= link_to article.title, show_path(id: article.id), class: "title" %>             
         <p>
-          <span class="ate">
+          <span class="date">
             <%= article.created_at.strftime("%-d %^B %Y")%>
           </span>
         </p>
         <p>
-          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+          <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-primary" %>
         </p>
       </div>
     </section>
@@ -83,12 +91,17 @@
           <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: article.image) %>
           <%= image_tag image_url, style:"width:100%;" %>
         </div>
-        <div class="col-md-5">             
-          <p class="description">
+        <div class="col-md-5" style="margin-top:5px; margin-bottom:5px;">             
+          <p class="description visible-md">
+            <%= truncate(article.content, length:220) %>   
+          </p>
+          <p class="description hidden-md">
             <%= truncate(article.content, length:350) %>   
           </p>
+        </div>
+        <div class="col-md-5">
           <p class="text-center">
-            <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-success" %>
+            <%= link_to 'Read More', show_path(id: article.id), class: "btn btn-xs btn-primary" %>
           </p>
         </div>
       </div>
