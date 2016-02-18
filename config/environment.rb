@@ -7,6 +7,6 @@ Rails.application.initialize!
 
 Aws.config.update({
   region: 'eu-west-1',
-  credentials: Aws::Credentials.new('AKIAIEJW4M4FVVSGZM5A', 'oAB/08hjjsPT1W5P4NLFPGViWEQxfG5BQbqJF6fh'),
+  credentials: Aws::Credentials.new(ENV['S3_KEY'], ENV['S3_SECRET']),
 })
 		
