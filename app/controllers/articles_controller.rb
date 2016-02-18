@@ -48,6 +48,7 @@ class ArticlesController < ApplicationController
 		end 
 		@article.title = params[:article][:title]
 		@article.content = params[:article][:content]
+		@article.video_url = params[:article][:video_url]
 		if  @article.save
 				flash[:success] = "Article was successfully updated"
 				redirect_to articles_path
@@ -77,7 +78,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def article_params
-		params.require(:article).permit(:title, :content, :image)
+		params.require(:article).permit(:title, :content, :image,:video_url)
 	end
 
 	

@@ -4,12 +4,18 @@
 <div class = "row">
   <div class= "col-md-10 col-md-offset-1">
     <div class="col-md-12 show-section">
-      <div class = "col-md-4">
-        <% signer = Aws::S3::Presigner.new %>
-        <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: @article.image) %>
-        <%= image_tag image_url, style:"width:100%; margin-top:10px;" %>
+      <div class = "col-md-6">
+        <%if @article.video_url%>
+              <iframe  style="width:90%; height:315px; margin-left:5%; margin-top:10px;"  src='https://www.youtube.com/embed/<%=embed(@article.video_url)%>' frameborder="0" allowfullscreen></iframe>
+           <%else%>
+            <% signer = Aws::S3::Presigner.new %>
+            <% image_url = signer.presigned_url(:get_object, bucket: "smidblog-images", key: @article.image) %>
+            
+            <%= image_tag image_url, style:"width:100%; margin-top:10px;" %>
+
+        <%end%>       
       </div>
-      <div class="col-md-8 text-center">
+      <div class="col-md-6 text-center">
           <h1 class = "article-title" style="margin-top:20px;">
             <%= @article.title %>
           </h1>
